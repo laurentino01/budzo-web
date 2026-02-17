@@ -19,9 +19,9 @@ import { useState } from 'react';
 
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
-  { name: 'Clientes', href: '/dashboard/clients', icon: Users },
-  { name: 'Orçamentos', href: '/dashboard/quotes', icon: FileText },
-  { name: 'Configurações', href: '/dashboard/settings', icon: Settings },
+  { name: 'Clientes', href: '/clients', icon: Users },
+  { name: 'Orçamentos', href: '/quotes', icon: FileText },
+  { name: 'Configurações', href: '/settings', icon: Settings },
 ];
 
 export function Sidebar() {
