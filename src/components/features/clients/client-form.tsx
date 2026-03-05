@@ -17,7 +17,7 @@ interface ClientFormProps {
 
 export function ClientForm({ defaultValues, onSubmit, isLoading, isEditing }: ClientFormProps) {
   const form = useForm<ClientValues>({
-    resolver: zodResolver(clientSchema),
+    resolver: zodResolver(clientSchema) as any,
     defaultValues: defaultValues || {
       name: '',
       email: '',

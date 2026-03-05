@@ -38,8 +38,10 @@ api.interceptors.response.use(
   (response) => response,
   (error: AxiosError) => {
     if (error.response) {
-      const { status } = error.response;
+      const { status, data } = error.response;
       
+      console.error(`[API Error ${status}]:`, data);
+
       // Handle Unauthorized
       if (status === 401) {
         // Redirect to login or dispatch logout action

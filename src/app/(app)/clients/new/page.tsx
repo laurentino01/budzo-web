@@ -18,14 +18,13 @@ export default function NewClientPage() {
       toast.success('Cliente criado com sucesso!');
       router.push('/clients');
     },
-    onError: () => {
-      toast.error('Erro ao criar cliente.');
+    onError: (error: any) => {
+      const apiError = error.response?.data?.error?.message || error.response?.data?.message || 'Verifique os dados enviados.';
+      toast.error(`Erro ao criar cliente: ${apiError}`);
     },
   });
 
   const handleSubmit = async (data: ClientValues) => {
-    console.log(data);
-    return;
     mutation.mutate(data);
   };
 
